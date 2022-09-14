@@ -26,7 +26,7 @@ async function handler(req, res) {
 
     try {
       client = await MongoClient.connect(
-        'mongodb+srv://maximilian:2YkcXq43KyPk0vqp@cluster0.ntrwp.mongodb.net/my-site?retryWrites=true&w=majority'
+        'mongodb+srv://mongoPaul:dsN6kdxUS8WepQin@cluster0.egvlynj.mongodb.net/next-blog?retryWrites=true&w=majority'
       );
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database.' });
@@ -46,9 +46,7 @@ async function handler(req, res) {
 
     client.close();
 
-    res
-      .status(201)
-      .json({ message: 'Successfully stored message!', message: newMessage });
+    res.status(201).json({ message: 'Successfully stored message!', message: newMessage });
   }
 }
 
